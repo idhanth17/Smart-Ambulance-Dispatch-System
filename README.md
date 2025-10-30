@@ -1,6 +1,6 @@
 # Smart-Ambulance-Dispatch-System
 
-**Smart Ambulance Dispatch System – Abstract (≤350 words)**
+**Smart Ambulance Dispatch System**
 
 Emergency medical response time plays a vital role in saving lives. Traditional ambulance dispatch systems face delays due to manual coordination, unclear routing, and traffic congestion. The Smart Ambulance Dispatch System offers an automated, intelligent solution to enhance emergency response speed and hospital coordination.
 
