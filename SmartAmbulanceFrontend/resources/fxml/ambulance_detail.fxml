@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.web.WebView?>
+<?import javafx.scene.layout.HBox?>
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.smartambulance.frontend.controllers.AmbulanceDetailController" spacing="8" style="-fx-padding: 10;">
+    <Label fx:id="titleLabel" text="Ambulance"/>
+    <WebView fx:id="detailMap" prefWidth="700" prefHeight="400"/>
+    <HBox spacing="8">
+        <Button fx:id="dutyButton" text="Toggle Duty" onAction="#onToggleDuty"/>
+        <Button fx:id="pickupButton" text="Pickup Patient" onAction="#onPickup" />
+        <Button fx:id="dropButton" text="Drop Patient" onAction="#onDrop" />
+    </HBox>
+    <Label fx:id="infoLabel" text="Info"/>
+</VBox>

@@ -1,0 +1,48 @@
+<script>
+    window.mapReady = false;
+
+    window.onload = function () {
+        window.map = L.map('map').setView([11.0168, 76.9558], 13);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19
+        }).addTo(window.map);
+
+        window.markers = [];
+
+        window.clearMap = function () {
+            if (window.markers && window.markers.length > 0) {
+                for (let m of window.markers) {
+                    window.map.removeLayer(m);
+                }
+                window.markers = [];
+            }
+            console.log("✅ Map cleared");
+        };
+
+        function addMarker(lat, lon, label, color) {
+            const icon = L.icon({
+                iconUrl: `https://chart.googleapis.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|${color}`,
+                iconSize: [21, 34],
+                iconAnchor: [10, 34],
+                popupAnchor: [1, -34]
+            });
+            const marker = L.marker([lat, lon], { icon: icon }).addTo(window.map)
+                .bindPopup(`<div class="info-box">${label}</div>`);
+            window.markers.push(marker);
+        }
+
+        window.showAmbulance = function (lat, lon, name) {
+            window.clearMap();
+            addMarker(lat, lon, "🚑 " + name, "0000FF");
+            window.map.setView([lat, lon], 14);
+        };
+
+        window.showPatient = function (lat, lon, name) {
+            addMarker(lat, lon, "🧍 " + name, "FF0000");
+            window.map.setView([lat, lon], 14);
+        };
+
+        window.mapReady = true;
+        console.log("✅ Smart Ambulance map fully initialized");
+    };
+</script>

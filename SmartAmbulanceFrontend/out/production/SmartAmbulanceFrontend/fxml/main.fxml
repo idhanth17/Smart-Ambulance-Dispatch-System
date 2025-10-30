@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<TabPane fx:id="rootTabPane" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+    <tabs>
+        <Tab text="Controller">
+            <fx:include source="controller_tab.fxml"/>
+        </Tab>
+        <Tab text="Ambulance">
+            <fx:include source="ambulance_tab.fxml"/>
+        </Tab>
+    </tabs>
+</TabPane>

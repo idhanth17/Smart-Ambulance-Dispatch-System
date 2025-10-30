@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.web.WebView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.geometry.Insets?>
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.smartambulance.frontend.controllers.ControllerTabController">
+    <top>
+        <HBox spacing="10">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <Button text="Refresh" onAction="#onRefresh"/>
+            <Button text="Assign Selected Ambulance -> Selected Patient" onAction="#onAssign"/>
+        </HBox>
+    </top>
+    <left>
+        <ListView fx:id="ambulanceList" prefWidth="260" />
+    </left>
+    <center>
+        <WebView fx:id="mapView" prefWidth="800" prefHeight="600"/>
+    </center>
+    <right>
+        <ListView fx:id="patientList" prefWidth="260"/>
+    </right>
+</BorderPane>
